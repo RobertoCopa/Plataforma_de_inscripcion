@@ -1,0 +1,30 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+# Credenciales locales y material criptográfico: nunca versionar secretos.
+.npmrc
+!.npmrc.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials.json
+*credentials*.json
+*service-account*.json
+.aws/
+.ssh/
+# Estado y archivos locales de proveedores de infraestructura.
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tsbuildinfo
+*.db
+*.db-shm
+*.db-wal
+.vercel/
+test-results/
+.qa/
