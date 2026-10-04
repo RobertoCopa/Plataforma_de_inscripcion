@@ -1,6 +1,6 @@
 # Ingeniería Informática · UATF
 
-Web en Next.js App Router, React y TypeScript, preparada para Vercel. Diseño neumórfico adaptable, tipografía Manrope alojada en el proyecto y colores azul y amarillo. Los escudos originales se conservan en `image/`; sus copias públicas están en `public/images/`.
+Web en Next.js App Router, React y TypeScript, preparada para Vercel. Diseño neumórfico adaptable, tipografía Manrope alojada en el proyecto y colores azul y amarillo. Los escudos originales se conservan en `image/`; sus copias públicas están en `public/images/` y se actualizan allí cuando cambian.
 
 ## Ejecutar localmente
 
@@ -17,7 +17,7 @@ Abre http://localhost:3000. La presentación funciona sin credenciales. Para gua
 ## Configurar Turso
 
 1. Crea una base de datos en tu cuenta de Turso desde su panel o CLI. La guía oficial está en https://docs.turso.tech/sdk/ts/quickstart.
-2. Copia la URL `libsql://…` de la base y genera un token de acceso con permisos de escritura. No compartas el token en el código ni por el chat.
+2. Copia la URL `libsql://…` de la base y genera un token de acceso con permisos de escritura.
 3. Completa las variables del archivo `.env.local`:
 
 ```dotenv

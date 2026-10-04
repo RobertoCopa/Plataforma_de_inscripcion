@@ -42,14 +42,14 @@ export function Footer() {
           <div className="institutional-logos">
             <Image
               style={{ height: "auto" }}
-              src="/images/universidad.jpg"
+              src="/images/universidad.png"
               width={58}
               height={68}
               alt="Escudo de la Universidad Autónoma Tomás Frías"
             />
             <Image
               style={{ height: "auto" }}
-              src="/images/facultad.jpg"
+              src="/images/facultad.png"
               width={60}
               height={68}
               alt="Escudo de la Facultad de Ciencias Puras"
