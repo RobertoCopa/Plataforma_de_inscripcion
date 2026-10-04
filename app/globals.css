@@ -1,14 +1,16 @@
 :root {
-  --surface: #edf0f5;
-  --surface-deep: #e5eaf1;
-  --ink: #182945;
-  --muted: #637087;
-  --blue: #244997;
-  --blue-dark: #153572;
-  --yellow: #f7cd46;
-  --border: #d9e0ea;
-  --shadow: 9px 9px 22px #d4dae4, -9px -9px 22px #fff;
-  --inset: inset 4px 4px 9px #d6dce5, inset -4px -4px 9px #fff;
+  --surface: #dce5f0;
+  --surface-deep: #d1dce9;
+  --ink: #172943;
+  --muted: #56677f;
+  --blue: #234780;
+  --blue-dark: #183565;
+  --yellow: #e9bd43;
+  --teal: #5486b5;
+  --lilac: #777da8;
+  --border: #c5d0de;
+  --shadow: 9px 9px 22px #bdc9d8, -9px -9px 22px #eaf0f7;
+  --inset: inset 4px 4px 9px #c4cfdd, inset -4px -4px 9px #eaf0f7;
 }
 * {
   box-sizing: border-box;
@@ -19,7 +21,9 @@ html {
 }
 body {
   margin: 0;
-  background: var(--surface);
+  background:
+    radial-gradient(circle at 83% 9%, #d5aa3828 0, transparent 22%),
+    radial-gradient(circle at 9% 30%, #5486b51c 0, transparent 29%), var(--surface);
   color: var(--ink);
   font-family: Manrope, Arial, sans-serif;
   font-size: 14px;
@@ -92,7 +96,7 @@ svg {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: #edf0f5ed;
+  background: #dce5f0ed;
   backdrop-filter: blur(16px);
   border-bottom: 1px solid #dce2eb90;
 }
@@ -173,7 +177,7 @@ svg {
   transform: translateY(0);
 }
 .button-blue {
-  background: var(--blue);
+  background: linear-gradient(145deg, #3057a6, #193c84);
   color: white;
   box-shadow:
     5px 5px 12px #cbd3e2,
@@ -184,7 +188,7 @@ svg {
   background: var(--blue-dark);
 }
 .button-yellow {
-  background: var(--yellow);
+  background: linear-gradient(145deg, #f0d477, #dfb33d);
   color: #253655;
   box-shadow:
     5px 5px 13px #d7cfb1,
@@ -227,7 +231,7 @@ svg {
   align-items: center;
   gap: 9px;
   border-radius: 99px;
-  background: var(--surface);
+  background: linear-gradient(120deg, #e1e9f2, #d4e0ed 70%, #e9e1cc);
   box-shadow: var(--inset);
   padding: 9px 15px;
   font-size: 9px;
@@ -316,6 +320,17 @@ svg {
   margin-top: 20px;
   isolation: isolate;
 }
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 12px 0 0;
+  z-index: -2;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 70% 32%, #e5bc4935, transparent 48%),
+    radial-gradient(circle at 38% 57%, #5486b533, transparent 61%);
+  filter: blur(14px);
+}
 .orbital {
   position: absolute;
   border-radius: 50%;
@@ -328,6 +343,7 @@ svg {
   left: 55px;
   box-shadow: var(--inset);
   border: 15px solid var(--surface);
+  background: radial-gradient(circle at 72% 25%, #e0b9452a, #729bc229 60%, transparent 78%);
 }
 .orbital-two {
   width: 430px;
@@ -362,18 +378,19 @@ svg {
   border-radius: 14px;
   box-shadow: var(--inset);
   color: var(--blue);
-  background: var(--surface);
+  background: radial-gradient(circle at 76% 22%, #c8dff0, #dce5f0 72%);
   flex-shrink: 0;
 }
 .yellow-well {
   color: #aa8219;
+  background: radial-gradient(circle at 76% 22%, #f3dda0, #e2dfd5 76%);
 }
 .code-scene {
   position: absolute;
   top: 100px;
   left: 26px;
   right: 26px;
-  background: #183572;
+  background: linear-gradient(145deg, #1e438b, #173773 70%, #233d7f);
   border-radius: 19px;
   box-shadow: 15px 23px 30px #bcc7dd;
   border: 1px solid #47609a;
@@ -432,7 +449,7 @@ svg {
   color: #f9d36c;
 }
 .code-body strong {
-  color: #a3dcd5;
+  color: #9fc8e8;
   font-weight: 400;
 }
 .code-spacer {
@@ -474,18 +491,24 @@ svg {
   width: 80px;
   height: 80px;
   transform: rotate(12deg);
-  background: var(--yellow);
+  background: radial-gradient(circle at 26% 20%, #f2dda0, #e4bf51 58%, #c99e32);
   color: var(--blue);
-  box-shadow: 7px 9px 18px #d5c998;
+  box-shadow:
+    inset 3px 3px 7px #fff2b2,
+    7px 9px 18px #cfc79e;
 }
 .tile-spark {
   bottom: 23px;
   left: -4px;
   width: 66px;
   height: 66px;
-  box-shadow: var(--shadow);
+  box-shadow:
+    inset 3px 3px 8px #f8ffff,
+    inset -3px -3px 8px #c9dfeb,
+    8px 9px 19px #c5d1df,
+    -6px -6px 15px #faffff;
   color: var(--blue);
-  background: var(--surface);
+  background: radial-gradient(circle at 32% 24%, #d6e8f5, #bfd6e8 68%, #d1d9ec);
   animation-delay: -3s;
 }
 .career-badge {
@@ -495,7 +518,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 13px;
-  background: var(--surface);
+  background: linear-gradient(145deg, #e0e9f2, #ceddeb 74%, #e6ddc5);
   box-shadow: var(--shadow);
   border: 1px solid #ffffffa0;
   border-radius: 17px;
@@ -503,7 +526,7 @@ svg {
   min-width: 330px;
 }
 .career-badge-image {
-  background: #fff;
+  background: #e0e8f1;
   border-radius: 12px;
   width: 67px;
   height: 65px;
@@ -548,7 +571,10 @@ svg {
   border-radius: 19px;
   padding: 25px 20px;
   gap: 16px;
-  border: 1px solid #ffffff70;
+  border: 1px solid #e9eff780;
+  background:
+    radial-gradient(circle at 88% 12%, #f7cd4633, transparent 34%),
+    linear-gradient(120deg, #dfe8f2, #d2deeb);
 }
 .facts-bar > div {
   display: flex;
@@ -631,13 +657,26 @@ svg {
   margin-top: 6px;
 }
 .neu-card {
-  background: var(--surface);
+  background:
+    radial-gradient(circle at 88% 12%, #e2b83b35, transparent 56%),
+    radial-gradient(circle at 3% 95%, #5486b52b, transparent 66%),
+    linear-gradient(145deg, #e1eaf3, #d2deeb);
   box-shadow: var(--shadow);
   border-radius: 18px;
-  border: 1px solid #ffffff70;
+  border: 1px solid #e9eff780;
 }
 .purpose-card {
   padding: 25px;
+}
+.purpose-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 90% 12%, #5795c13b, transparent 60%),
+    linear-gradient(145deg, #dce8f1, #cddbea);
+}
+.purpose-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 88% 12%, #e9bd4350, transparent 58%),
+    linear-gradient(145deg, #e9e6db, #d9e0e9);
 }
 .purpose-card h3 {
   font-size: 14px;
@@ -650,7 +689,7 @@ svg {
   line-height: 1.9;
 }
 .formation-section {
-  background: #e7ebf2;
+  background: linear-gradient(120deg, #cbd9e9, #d9e1eb 57%, #e4ddca);
   border-block: 1px solid #dce3ed;
 }
 .formation-section .section {
@@ -677,6 +716,33 @@ svg {
 .area-card {
   padding: 25px 23px;
   transition: transform 0.25s;
+}
+.area-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 84% 8%, #5795c13f, transparent 58%),
+    linear-gradient(145deg, #dce7f0, #cddae8);
+}
+.area-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 84% 8%, #e9bd4352, transparent 58%),
+    linear-gradient(145deg, #e8e4d8, #d8dfe9);
+}
+.area-card:nth-child(4) {
+  background:
+    radial-gradient(circle at 84% 8%, #777da835, transparent 58%),
+    linear-gradient(145deg, #e0e4ef, #cfdbea);
+}
+.area-card:nth-child(2) .icon-well {
+  color: var(--teal);
+  background: radial-gradient(circle at 76% 22%, #c8e0f1, #d6e2ee 72%);
+}
+.area-card:nth-child(3) .icon-well {
+  color: #a77d1b;
+  background: radial-gradient(circle at 76% 22%, #f0dc9f, #dfddd4 72%);
+}
+.area-card:nth-child(4) .icon-well {
+  color: var(--lilac);
+  background: radial-gradient(circle at 76% 22%, #d7d9ed, #d8e0ec 72%);
 }
 .area-card:hover {
   transform: translateY(-6px);
@@ -792,7 +858,10 @@ svg {
   display: flex;
   align-items: center;
   gap: 35px;
-  background: var(--blue-dark);
+  background:
+    radial-gradient(circle at 83% 15%, #d5aa382b, transparent 33%),
+    radial-gradient(circle at 4% 90%, #5486b547, transparent 42%),
+    linear-gradient(120deg, #163464, #20447e 67%, #172f5d);
   border-radius: 24px;
   padding: 51px 49px;
   color: white;
@@ -896,7 +965,7 @@ svg {
 }
 .site-footer {
   border-top: 1px solid var(--border);
-  background: #e5eaf1;
+  background: linear-gradient(120deg, #d1ddea, #d9e2ec 74%, #e2ddcf);
 }
 .footer-main {
   display: grid;
@@ -1176,7 +1245,7 @@ svg {
   align-items: flex-start;
   padding: 16px;
   border-radius: 12px;
-  background: #e4e9f3;
+  background: #d3deea;
   color: var(--muted);
   font-size: 10px;
   line-height: 1.8;
@@ -1279,7 +1348,7 @@ svg {
   margin: 0 auto 26px;
   color: var(--blue);
   box-shadow: var(--inset);
-  background: var(--surface);
+  background: radial-gradient(circle at 74% 22%, #efdb9e, #ceddeb 70%);
 }
 .success-card h2 {
   font-size: 27px;
@@ -1294,7 +1363,7 @@ svg {
 }
 .confirmation-code {
   margin: 27px 0;
-  background: var(--surface);
+  background: linear-gradient(120deg, #e8dfc7, #d4e0ec 70%);
   box-shadow: var(--inset);
   border-radius: 12px;
   padding: 18px;

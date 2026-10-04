@@ -403,8 +403,7 @@ export default function Home() {
               <span className="eyebrow">EL SIGUIENTE PASO ES TUYO</span>
               <h2>
                 Tu futuro comienza
-                <br />
-                con una decisión.
+                <br /> con una decisión.
               </h2>
               <p>Trae tu curiosidad. Aquí empieza lo que puedes crear.</p>
             </div>
@@ -419,8 +418,7 @@ export default function Home() {
             <span className="eyebrow">ANTES DE DAR EL PASO</span>
             <h2>
               Resolvamos
-              <br />
-              <span>tus dudas.</span>
+              <br /> <span>tus dudas.</span>
             </h2>
             <p>
               Tu próximo capítulo,

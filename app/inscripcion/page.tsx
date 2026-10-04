@@ -23,8 +23,7 @@ export default function EnrollmentPage() {
             <span className="eyebrow">UN NUEVO COMIENZO</span>
             <h1>
               El primer paso
-              <br />
-              hacia <span>tu futuro.</span>
+              <br /> hacia <span>tu futuro.</span>
             </h1>
             <p>
               Registra tu solicitud para Ingeniería Informática. Completa tus datos y revísalos
