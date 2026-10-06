@@ -4,7 +4,7 @@ import { useState } from "react";
 const questions = [
   [
     "¿Cuánto dura la carrera?",
-    "La formación tiene una duración de 8 semestres. El diploma académico es de Licenciatura y el título de provisión nacional es de Ingeniero Informático.",
+    "La formación tiene una duración de 8 semestres. El diploma académico es a nivel Licenciatura.",
   ],
   [
     "¿Necesito saber programar para empezar?",
@@ -12,15 +12,15 @@ const questions = [
   ],
   [
     "¿Qué pasa después de enviar mi solicitud?",
-    "Recibirás en esta página una confirmación con tu código de solicitud. Conserva ese código y consulta con la carrera los siguientes pasos, documentos y requisitos. El envío del formulario no sustituye los procedimientos oficiales de admisión o matrícula.",
+    "Recibirás en esta página un código QR para unirte al grupo de WhatsApp. Permanece en el grupo y espera los siguientes pasos, documentos y requisitos. El envío del formulario no sustituye los procedimientos oficiales de admisión o matrícula.",
   ],
   [
     "¿Cuáles son las modalidades de titulación?",
-    "Las modalidades proporcionadas por la carrera son: tesis de licenciatura, proyecto de grado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente con la unidad académica.",
+    "Las modalidades proporcionadas por la carrera son: tesis de licenciatura, diplomado, proyecto de grado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente.",
   ],
   [
     "¿Dónde puedo recibir orientación?",
-    "Puedes escribir a informatica@uatf.edu.bo, llamar al +591 2 6227312 o visitar la carrera en la Av. del Maestro s/n, edificio central, Potosí.",
+    "Puedes escribir a informatica@uatf.edu.bo, llamar al +591 26227312 o visitar la carrera en la Av. del Maestro s/n, edificio central, Potosí.",
   ],
 ];
 export function FAQ() {
