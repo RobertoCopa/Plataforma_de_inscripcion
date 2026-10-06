@@ -61,7 +61,7 @@ export default function EnrollmentPage() {
             <div className="enrollment-help">
               ¿Necesitas ayuda con tu solicitud?
               <a href="mailto:informatica@uatf.edu.bo">informatica@uatf.edu.bo</a>
-              <a href="tel:+59126227312">+591 2 6227312</a>
+              <a href="tel:+59126227312">+591 26227312</a>
             </div>
           </aside>
           <EnrollmentForm />

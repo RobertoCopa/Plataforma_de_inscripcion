@@ -45,6 +45,9 @@ export function Header({ enrollment = false }: { enrollment?: boolean }) {
           <Link href="/#formacion" onClick={() => setOpen(false)}>
             Tu formación
           </Link>
+          <Link href="/#menciones" onClick={() => setOpen(false)}>
+            Menciones
+          </Link>
           <Link href="/#futuro" onClick={() => setOpen(false)}>
             Tu futuro
           </Link>

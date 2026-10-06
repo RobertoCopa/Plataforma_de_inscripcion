@@ -21,9 +21,14 @@ html {
 }
 body {
   margin: 0;
+  /* Una sola iluminación para toda la página, con halos que se solapan. */
   background:
-    radial-gradient(circle at 83% 9%, #d5aa3828 0, transparent 22%),
-    radial-gradient(circle at 9% 30%, #5486b51c 0, transparent 29%), var(--surface);
+    radial-gradient(ellipse 75% 20% at 88% 6%, #d5aa3833 0, transparent 78%),
+    radial-gradient(ellipse 80% 22% at 8% 24%, #397bb85c 0, transparent 78%),
+    radial-gradient(ellipse 75% 22% at 94% 43%, #d5aa3830 0, transparent 78%),
+    radial-gradient(ellipse 80% 22% at 6% 62%, #397bb85c 0, transparent 78%),
+    radial-gradient(ellipse 75% 22% at 92% 81%, #d5aa3830 0, transparent 78%),
+    radial-gradient(ellipse 80% 20% at 12% 100%, #397bb85c 0, transparent 78%), var(--surface);
   color: var(--ink);
   font-family: Manrope, Arial, sans-serif;
   font-size: 14px;
@@ -689,8 +694,7 @@ svg {
   line-height: 1.9;
 }
 .formation-section {
-  background: linear-gradient(120deg, #cbd9e9, #d9e1eb 57%, #e4ddca);
-  border-block: 1px solid #dce3ed;
+  background: transparent;
 }
 .formation-section .section {
   padding-block: 82px;
@@ -712,6 +716,106 @@ svg {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 38px;
+}
+.mentions-section {
+  padding-block: 88px;
+}
+.mentions-section .section-top {
+  margin-bottom: 34px;
+}
+.mentions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.mention-card {
+  min-height: 100%;
+  padding: 27px 25px 25px;
+  border: 1px solid #e9eff780;
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 88% 8%, #5486b528, transparent 49%),
+    linear-gradient(145deg, #e1eaf3, #d2deeb);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.mention-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 88% 8%, #e9bd4340, transparent 52%),
+    linear-gradient(145deg, #e9e6db, #d9e0e9);
+}
+.mention-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 88% 8%, #658fc03b, transparent 54%),
+    linear-gradient(145deg, #dce7f0, #cddae8);
+}
+.mention-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    11px 13px 25px #b9c6d6,
+    -8px -8px 21px #eaf0f7;
+}
+.mention-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.mention-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--blue);
+  background: radial-gradient(circle at 28% 20%, #d5e6f4, #c7d7e8 72%);
+  box-shadow: var(--inset);
+}
+.mention-card:nth-child(2) .mention-icon {
+  color: #9c7724;
+  background: radial-gradient(circle at 28% 20%, #f1e2b7, #ded9c7 72%);
+}
+.mention-card:nth-child(3) .mention-icon {
+  color: #315f97;
+}
+.mention-card h3 {
+  margin: 22px 0 10px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.35px;
+}
+.mention-card > p {
+  min-height: 67px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.mention-card ul {
+  display: grid;
+  gap: 11px;
+  margin: 21px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid #aebed080;
+  list-style: none;
+}
+.mention-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.mention-card li svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--blue);
+}
+.mention-card:nth-child(2) li svg {
+  color: #96721e;
 }
 .area-card {
   padding: 25px 23px;
@@ -964,8 +1068,7 @@ svg {
   padding-right: 35px;
 }
 .site-footer {
-  border-top: 1px solid var(--border);
-  background: linear-gradient(120deg, #d1ddea, #d9e2ec 74%, #e2ddcf);
+  background: transparent;
 }
 .footer-main {
   display: grid;
@@ -1672,6 +1775,14 @@ svg {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
+  .mentions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mention-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
+  }
   .area-card h3 {
     min-height: 0;
     font-size: 15px;
@@ -1998,6 +2109,17 @@ svg {
   .areas-grid {
     gap: 21px;
     margin-top: 26px;
+  }
+  .mentions-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .mention-card:last-child {
+    grid-column: auto;
+    width: auto;
+  }
+  .mention-card > p {
+    min-height: 0;
   }
   .area-card {
     padding: 20px 17px;

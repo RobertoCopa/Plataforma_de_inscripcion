@@ -16,7 +16,7 @@ const questions = [
   ],
   [
     "¿Cuáles son las modalidades de titulación?",
-    "Las modalidades proporcionadas por la carrera son: tesis de licenciatura, diplomado, proyecto de grado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente.",
+    "Las modalidades proporcionadas por la carrera son: tesis de licenciatura, vía diplomado, proyecto de grado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente.",
   ],
   [
     "¿Dónde puedo recibir orientación?",

@@ -12,6 +12,7 @@ import {
   FlaskConical,
   Lightbulb,
   ShieldCheck,
+  BrainCircuit,
   Terminal,
   Check,
   MapPin,
@@ -54,6 +55,42 @@ const areas = [
     title: "Innovación e investigación",
     copy: "Explora tecnologías emergentes y desarrolla soluciones con impacto en tu comunidad.",
     tags: ["Investigación", "Tecnología aplicada"],
+  },
+];
+
+const mentions = [
+  {
+    number: "01",
+    icon: Code2,
+    title: "Ingeniería de Software",
+    intro:
+      "Diseña aplicaciones, plataformas y sistemas confiables para resolver necesidades reales.",
+    topics: [
+      "Desarrollo de aplicaciones",
+      "Arquitectura de software",
+      "Metodologías ágiles",
+      "Gestión de proyectos tecnológicos",
+    ],
+  },
+  {
+    number: "02",
+    icon: BrainCircuit,
+    title: "Ciencia de Datos e Inteligencia Artificial",
+    intro:
+      "Convierte grandes volúmenes de datos en conocimiento y crea soluciones capaces de aprender.",
+    topics: ["Machine learning", "Analítica de datos", "Big Data", "Soluciones inteligentes"],
+  },
+  {
+    number: "03",
+    icon: ShieldCheck,
+    title: "Redes y Ciberseguridad",
+    intro: "Conecta servicios y protege redes, sistemas e información ante los desafíos digitales.",
+    topics: [
+      "Administración de redes",
+      "Seguridad informática",
+      "Hacking ético",
+      "Protección de infraestructuras digitales",
+    ],
   },
 ];
 
@@ -324,6 +361,45 @@ export default function Home() {
                 allá del código.
               </span>
             </div>
+          </div>
+        </section>
+        <section className="section container mentions-section" id="menciones">
+          <div className="section-top">
+            <div className="section-heading">
+              <span className="eyebrow">TRES CAMINOS PARA ESPECIALIZARTE</span>
+              <h2>
+                Encuentra tu enfoque.
+                <br />
+                <span>Hazlo realidad.</span>
+              </h2>
+            </div>
+            <p>
+              Explora las menciones de Ingeniería Informática y descubre el campo donde quieres
+              <br className="desktop-break" />
+              convertir tu curiosidad en soluciones.
+            </p>
+          </div>
+          <div className="mentions-grid">
+            {mentions.map(({ number, icon: Icon, title, intro, topics }) => (
+              <article className="mention-card" key={number}>
+                <div className="mention-card-top">
+                  <span className="mention-icon">
+                    <Icon size={27} strokeWidth={1.8} />
+                  </span>
+                  <span className="area-number">MENCIÓN {number}</span>
+                </div>
+                <h3>{title}</h3>
+                <p>{intro}</p>
+                <ul>
+                  {topics.map((topic) => (
+                    <li key={topic}>
+                      <Check size={15} aria-hidden="true" />
+                      <span>{topic}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
         <section className="section container future-section" id="futuro">
