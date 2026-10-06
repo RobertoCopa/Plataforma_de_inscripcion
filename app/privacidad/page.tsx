@@ -15,32 +15,27 @@ export default function PrivacyPage() {
         </Link>
         <span className="eyebrow">TU INFORMACIÓN TIENE UN PROPÓSITO</span>
         <h1>Aviso de privacidad</h1>
-        <p className="privacy-date">Versión del formulario: 3 de octubre de 2026.</p>
         <p>
-          Este aviso describe el uso de los datos que envías mediante el formulario de solicitud de
-          inscripción a Ingeniería Informática de la Facultad de Ciencias Puras de la Universidad
-          Autónoma Tomás Frías.
+          Este aviso describe el uso de los datos que envías mediante el formulario.
         </p>
         <h2>Qué datos se solicitan</h2>
         <p>
           Nombre(s), apellido(s), cédula de identidad, fecha de nacimiento, género, número de
-          celular y correo electrónico. También se registra la fecha de envío, un código de
-          solicitud y la aceptación de este aviso.
+          celular y correo electrónico.
         </p>
         <h2>Para qué se utilizan</h2>
         <p>
-          Los datos se recogen para gestionar tu solicitud, evitar registros duplicados y permitir
-          la comunicación sobre el proceso de inscripción. La aceptación corresponde a este
-          propósito y no implica una autorización para recibir publicidad ajena al proceso.
+          Los datos se recogen para gestionar tu solicitud y permitir
+          la comunicación sobre el proceso de inscripción. No implica una autorización para recibir publicidad ajena al proceso.
         </p>
         <h2>Almacenamiento y acceso</h2>
         <p>
-          Las solicitudes se almacenan en la base de datos configurada para este sitio, alojada en
-          Turso. El sitio está preparado para funcionar en Vercel. El acceso a los registros se
-          realiza mediante credenciales del servidor y debe limitarse al personal autorizado que
+          Las solicitudes se almacenan en la base de datos configurada para este sitio. El acceso a los registros se
+          realiza mediante credenciales confidenciales y se limita al personal autorizado que
           gestione las solicitudes. El formulario no publica tu información ni ofrece una consulta
           pública de registros.
         </p>
+        {/*
         <h2>Protección del formulario</h2>
         <p>
           Para limitar envíos repetidos se mantiene temporalmente una clave derivada de la dirección
@@ -48,13 +43,12 @@ export default function PrivacyPage() {
           eliminan cuando tienen más de 24 horas, durante la siguiente actividad del formulario. Los
           proveedores de alojamiento pueden gestionar registros técnicos propios.
         </p>
-        <h2>Consultas, correcciones y conservación</h2>
+        */}
+        <h2>Consultas e información</h2>
         <p>
-          Si necesitas consultar, corregir o solicitar la eliminación de tu información, comunícate
+          Comunícate
           con la carrera en <a href="mailto:informatica@uatf.edu.bo">informatica@uatf.edu.bo</a> o
-          al <a href="tel:+59126227312">+591 2 6227312</a>. Conserva tu código de solicitud para
-          facilitar la atención. La unidad académica deberá definir el período de conservación
-          aplicable y atender las solicitudes según sus procedimientos.
+          al <a href="tel:+59126227312">+591 26227312</a>. La unidad académica deberá atender las solicitudes según sus procedimientos.
         </p>
         <h2>Alcance de la solicitud</h2>
         <p>

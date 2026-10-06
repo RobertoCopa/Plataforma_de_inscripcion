@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS registrations (
   last_name TEXT NOT NULL,
   ci TEXT NOT NULL UNIQUE,
   birth_date TEXT NOT NULL,
-  gender TEXT NOT NULL CHECK (gender IN ('Femenino', 'Masculino', 'Otro', 'Prefiero no decirlo')),
+  gender TEXT NOT NULL CHECK (gender IN ('Femenino', 'Masculino')),
   phone TEXT NOT NULL,
   email TEXT NOT NULL,
   consent_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),

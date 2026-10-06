@@ -1476,6 +1476,18 @@ svg {
   color: var(--muted);
   font-size: 9px;
 }
+.confirmation-qr-image {
+  display: block;
+  width: min(240px, 100%);
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+}
+.confirmation-whatsapp {
+  max-width: 100%;
+  margin-bottom: 16px;
+  white-space: normal;
+}
 .confirmation-code strong {
   display: block;
   font-family: Consolas, monospace;

@@ -6,7 +6,7 @@ const name = z
   .min(2, "Escribe al menos 2 caracteres.")
   .max(100, "Usa hasta 100 caracteres.")
   .regex(/^[\p{L}\p{M} .'’\-]+$/u, "Usa letras, espacios, guiones o apóstrofos.");
-export const genders = ["Femenino", "Masculino", "Otro", "Prefiero no decirlo"] as const;
+export const genders = ["Femenino", "Masculino"] as const;
 export function currentBoliviaDate() {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/La_Paz",

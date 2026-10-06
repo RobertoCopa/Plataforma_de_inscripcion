@@ -23,7 +23,7 @@ test("la API valida, guarda, confirma reintentos y responde a fallos sin exponer
     lastName: "Sistema",
     ci: "99887766",
     birthDate: "2005-01-01",
-    gender: "Otro",
+    gender: "Masculino",
     phone: "+59171234567",
     email: "test@example.com",
     consent: true,

@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import whatsappQr from "@/image/QR.png";
 import { useRef, useState, type FormEvent } from "react";
 import {
   ArrowLeft,
@@ -11,6 +13,7 @@ import {
   Info,
   LoaderCircle,
   LockKeyhole,
+  MessageCircle,
   ShieldCheck,
 } from "lucide-react";
 import {
@@ -23,6 +26,7 @@ import {
 } from "@/lib/validation";
 
 type Confirmation = { reference: string; createdAt: string };
+const whatsappGroupUrl = "enlace";
 const empty: FormFields = {
   firstName: "",
   lastName: "",
@@ -187,11 +191,31 @@ export function EnrollmentForm() {
           <p>
             Tu solicitud se guardó correctamente.
             <br />
-            Conserva este código para consultar con la carrera.
+            Únete al grupo de WhatsApp y mantente informado.
           </p>
           <div className="confirmation-code">
-            <small>CÓDIGO DE TU SOLICITUD</small>
-            <strong>{confirmation.reference}</strong>
+            <Image
+              src={whatsappQr}
+              alt="QR para unirse al grupo de WhatsApp de Ingeniería Informática"
+              className="confirmation-qr-image"
+              unoptimized
+            />
+            {whatsappGroupUrl ? (
+              <a
+                className="button button-blue confirmation-whatsapp"
+                href={whatsappGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={18} />
+                Unirme al grupo de WhatsApp
+              </a>
+            ) : (
+              <button className="button button-blue confirmation-whatsapp" type="button" disabled>
+                <MessageCircle size={18} />
+                Unirme al grupo de WhatsApp
+              </button>
+            )}
             <small>
               {new Intl.DateTimeFormat("es-BO", {
                 dateStyle: "long",
