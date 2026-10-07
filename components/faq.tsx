@@ -12,15 +12,15 @@ const questions = [
   ],
   [
     "¿Qué pasa después de enviar mi solicitud?",
-    "Recibirás en esta página un código QR para unirte al grupo de WhatsApp. Permanece en el grupo y espera los siguientes pasos, documentos y requisitos. El envío del formulario no sustituye los procedimientos oficiales de admisión o matrícula.",
+    "Recibirás en esta página un código QR para ingresar al grupo de WhatsApp. Permanece en el grupo y espera los siguientes pasos y requisitos. El envío del formulario no sustituye los procedimientos oficiales de admisión o matrícula.",
   ],
   [
     "¿Cuáles son las modalidades de titulación?",
-    "Las modalidades proporcionadas por la carrera son: tesis de licenciatura, vía diplomado, proyecto de grado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente.",
+    "Las modalidades proporcionadas por la carrera son: tesis, proyecto de grado, vía diplomado, por excelencia y trabajo dirigido. Consulta las condiciones y la normativa vigente.",
   ],
   [
     "¿Dónde puedo recibir orientación?",
-    "Puedes escribir a informatica@uatf.edu.bo, llamar al +591 26227312 o visitar la carrera en la Av. del Maestro s/n, edificio central, Potosí.",
+    "Puedes escribir a informatica@uatf.edu.bo, llamar al +591 2 6227312 o visitar la carrera en la Av. del Maestro s/n, edificio central, Potosí.",
   ],
 ];
 export function FAQ() {

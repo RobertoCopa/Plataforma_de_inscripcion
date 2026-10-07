@@ -250,7 +250,7 @@ export default function Home() {
               </span>
               <p>
                 <strong>Licenciatura</strong>
-                <span>Diploma académico</span>
+                <span>Formación de nivel superior</span>
               </p>
             </div>
             <div>
@@ -259,7 +259,7 @@ export default function Home() {
               </span>
               <p>
                 <strong>Ingeniero Informático</strong>
-                <span>Título de provisión nacional</span>
+                <span>Perfil profesional</span>
               </p>
             </div>
             <div>

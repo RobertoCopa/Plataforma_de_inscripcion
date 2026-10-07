@@ -48,7 +48,7 @@ export default function PrivacyPage() {
         <p>
           Comunícate
           con la carrera en <a href="mailto:informatica@uatf.edu.bo">informatica@uatf.edu.bo</a> o
-          al <a href="tel:+59126227312">+591 26227312</a>. La unidad académica deberá atender las solicitudes según sus procedimientos.
+          al <a href="tel:+59126227312">+591 2 6227312</a>. La unidad académica deberá atender las solicitudes según sus procedimientos.
         </p>
         <h2>Alcance de la solicitud</h2>
         <p>

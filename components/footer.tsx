@@ -30,7 +30,7 @@ export function Footer() {
             </a>
             <a href="tel:+59126227312">
               <Phone size={17} />
-              +591 26227312
+              +591 2 6227312
             </a>
             <span>
               <MapPin size={17} />
