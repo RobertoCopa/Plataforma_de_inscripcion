@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone, Code2 } from "lucide-react";
 
-export function Footer() {
+export function Footer({ technical = false }: { technical?: boolean }) {
   return (
     <footer className="site-footer" id="contacto">
       <div className="container">
@@ -17,7 +17,7 @@ export function Footer() {
               </strong>
             </div>
             <p>
-              Ingeniería Informática
+              {technical ? "Carreras Técnico Universitarias Superiores" : "Ingeniería Informática"}
               <br />
               Facultad de Ciencias Puras · UATF
             </p>
@@ -55,7 +55,7 @@ export function Footer() {
               alt="Escudo de la Facultad de Ciencias Puras"
             />
             <div>
-              Una carrera.
+              {technical ? "Tu formación." : "Una carrera."}
               <br />
               <strong>Una gran universidad.</strong>
               <small>Universidad Autónoma Tomás Frías</small>
@@ -63,7 +63,10 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Ingeniería Informática · UATF</span>
+          <span>
+            © {new Date().getFullYear()}{" "}
+            {technical ? "Técnico Universitario Superior" : "Ingeniería Informática"} · UATF
+          </span>
           <div>
             <Link href="/privacidad">Privacidad</Link>
             <span>Hecho para quienes imaginan el mañana.</span>

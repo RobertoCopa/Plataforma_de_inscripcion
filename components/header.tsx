@@ -5,8 +5,27 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-export function Header({ enrollment = false }: { enrollment?: boolean }) {
+export function Header({
+  enrollment = false,
+  technical = false,
+}: {
+  enrollment?: boolean;
+  technical?: boolean;
+}) {
   const [open, setOpen] = useState(false);
+  const links = technical
+    ? [
+        ["/tecnico-superior#programas", "Carreras"],
+        ["/tecnico-superior#admision", "Admisión"],
+        ["/tecnico-superior#graduacion", "Graduación"],
+        ["/#carrera", "Licenciatura"],
+      ]
+    : [
+        ["/#oferta-academica", "Oferta académica"],
+        ["/#formacion", "Tu formación"],
+        ["/#menciones", "Menciones"],
+        ["/#futuro", "Tu futuro"],
+      ];
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -39,24 +58,19 @@ export function Header({ enrollment = false }: { enrollment?: boolean }) {
           aria-label="Navegación principal"
           className={open ? "navigation is-open" : "navigation"}
         >
-          <Link href="/#carrera" onClick={() => setOpen(false)}>
-            La carrera
-          </Link>
-          <Link href="/#formacion" onClick={() => setOpen(false)}>
-            Tu formación
-          </Link>
-          <Link href="/#menciones" onClick={() => setOpen(false)}>
-            Menciones
-          </Link>
-          <Link href="/#futuro" onClick={() => setOpen(false)}>
-            Tu futuro
-          </Link>
+          {links.map(([href, label]) => (
+            <Link key={href} href={href} onClick={() => setOpen(false)}>
+              {label}
+            </Link>
+          ))}
           <Link
-            href={enrollment ? "/#contacto" : "/inscripcion"}
+            href={
+              enrollment ? "/#contacto" : technical ? "/tecnico-superior#admision" : "/inscripcion"
+            }
             className="button button-blue header-cta"
             onClick={() => setOpen(false)}
           >
-            {enrollment ? "¿Necesitas ayuda?" : "Inscríbete"}
+            {enrollment ? "¿Necesitas ayuda?" : technical ? "Admisión directa" : "Inscríbete"}
           </Link>
         </nav>
       </div>

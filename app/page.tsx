@@ -121,7 +121,7 @@ export default function Home() {
               <Link href="/inscripcion" className="button button-yellow">
                 Quiero ser parte <ArrowUpRight size={19} />
               </Link>
-              <a href="#carrera" className="text-link">
+              <a href="#oferta-academica" className="text-link">
                 Descubre la carrera <ChevronDown size={17} />
               </a>
             </div>
@@ -231,48 +231,44 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="container">
-          <div className="facts-bar">
-            <div>
-              <span className="fact-icon">
-                <GraduationCap size={24} />
-              </span>
-              <p>
-                <strong>
-                  8 <small>semestres</small>
-                </strong>
-                <span>Para construir tu camino</span>
-              </p>
-            </div>
-            <div>
-              <span className="fact-icon">
-                <BookOpen size={24} />
-              </span>
-              <p>
-                <strong>Licenciatura</strong>
-                <span>Formación de nivel superior</span>
-              </p>
-            </div>
-            <div>
-              <span className="fact-icon">
-                <Cpu size={24} />
-              </span>
-              <p>
-                <strong>Ingeniero Informático</strong>
-                <span>Perfil profesional</span>
-              </p>
-            </div>
-            <div>
-              <span className="fact-icon">
-                <Globe2 size={24} />
-              </span>
-              <p>
-                <strong>Desde 1991</strong>
-                <span>Formando nuevas generaciones</span>
-              </p>
-            </div>
+        <section
+          className="container academic-paths"
+          id="oferta-academica"
+          aria-labelledby="academic-paths-title"
+        >
+          <div className="academic-paths-heading">
+            <span className="eyebrow">TU RUTA DE FORMACIÓN</span>
+            <h2 id="academic-paths-title">La tecnología tiene más de un camino.</h2>
           </div>
-        </div>
+          <div className="academic-paths-grid">
+            <a href="#carrera" className="academic-path-card neu-card">
+              <span className="icon-well">
+                <GraduationCap size={25} />
+              </span>
+              <div>
+                <span>LICENCIATURA</span>
+                <h3>Ingeniería Informática</h3>
+                <p>Explora la carrera, su formación y sus menciones.</p>
+              </div>
+              <ArrowUpRight size={22} aria-hidden="true" />
+            </a>
+            <Link
+              href="/tecnico-superior"
+              className="academic-path-card academic-path-technical neu-card"
+            >
+              <span className="icon-well yellow-well">
+                <Monitor size={25} />
+              </span>
+              <div>
+                <span>TÉCNICO UNIVERSITARIO SUPERIOR</span>
+                <h3>Tres carreras para aplicar tu talento</h3>
+                <p>6 semestres · Admisión directa</p>
+              </div>
+              <ArrowUpRight size={22} aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+        
         <section className="section container about-section" id="carrera">
           <div className="section-heading">
             <span className="eyebrow">MÁS QUE UNA CARRERA</span>
@@ -319,6 +315,50 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className="container">
+          <div className="facts-bar">
+            <div>
+              <span className="fact-icon">
+                <GraduationCap size={24} />
+              </span>
+              <p>
+                <strong>
+                  9 <small>semestres</small>
+                </strong>
+                <span>Para construir tu camino</span>
+              </p>
+            </div>
+            <div>
+              <span className="fact-icon">
+                <BookOpen size={24} />
+              </span>
+              <p>
+                <strong>Licenciatura</strong>
+                <span>Formación de nivel superior</span>
+              </p>
+            </div>
+            <div>
+              <span className="fact-icon">
+                <Cpu size={24} />
+              </span>
+              <p>
+                <strong>Ingeniero Informático</strong>
+                <span>Perfil profesional</span>
+              </p>
+            </div>
+            <div>
+              <span className="fact-icon">
+                <Globe2 size={24} />
+              </span>
+              <p>
+                <strong>Desde 1991</strong>
+                <span>Formando nuevas generaciones</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        
         <section className="formation-section" id="formacion">
           <div className="container section">
             <div className="section-top">

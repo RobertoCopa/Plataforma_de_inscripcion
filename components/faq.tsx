@@ -4,7 +4,7 @@ import { useState } from "react";
 const questions = [
   [
     "¿Cuánto dura la carrera?",
-    "La formación tiene una duración de 8 semestres. El diploma académico es a nivel Licenciatura.",
+    "La formación tiene una duración de 9 semestres. El diploma académico es a nivel Licenciatura.",
   ],
   [
     "¿Necesito saber programar para empezar?",
