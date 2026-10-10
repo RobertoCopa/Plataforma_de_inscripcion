@@ -20,7 +20,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Carreras Técnico Universitarias Superiores",
+  title: "Carreras Técnico Superiores",
   description:
     "Desarrollo de Sistemas Informáticos, Administrador de Base de Datos y Redes y Ciberseguridad en la UATF. Formación de 6 semestres con admisión directa.",
 };
@@ -100,7 +100,7 @@ export default function TechnicalPage() {
           <div>
             <span className="pill">
               <span className="tiny-mark" />
-              TÉCNICO UNIVERSITARIO SUPERIOR
+              TÉCNICO SUPERIOR
             </span>
             <h1>
               Tu talento,
@@ -148,7 +148,7 @@ export default function TechnicalPage() {
         </section>
         <section
           className="container technical-facts"
-          aria-label="Datos de las carreras Técnico Universitarias Superiores"
+          aria-label="Datos de las carreras Técnico Superiores"
         >
           <div>
             <BookOpen size={24} />
@@ -160,7 +160,7 @@ export default function TechnicalPage() {
           <div>
             <GraduationCap size={25} />
             <p>
-              <strong>Técnico Universitario Superior</strong>
+              <strong>Técnico Superior</strong>
               <span>Nivel de titulación</span>
             </p>
           </div>
@@ -187,8 +187,8 @@ export default function TechnicalPage() {
               </h2>
             </div>
             <p>
-              Una formación técnica universitaria para
-              <br className="desktop-break" /> desarrollar habilidades y aplicarlas.
+              Una formación técnica para desarrollar
+              <br className="desktop-break" /> habilidades y aplicarlas.
             </p>
           </div>
           <nav className="technical-program-nav" aria-label="Explorar las carreras técnicas">
@@ -215,7 +215,7 @@ export default function TechnicalPage() {
                     <strong>{purpose}</strong>
                   </div>
                   <div className="technical-program-copy">
-                    <span className="eyebrow">TEC. UNIV. SUP.</span>
+                    <span className="eyebrow">TEC. SUP.</span>
                     <h3>{title}</h3>
                     <p>{intro}</p>
                     <div className="technical-program-detail">
@@ -284,7 +284,7 @@ export default function TechnicalPage() {
               <br />
               <span>en un logro profesional.</span>
             </h2>
-            <p>Modalidades de graduación para el nivel Técnico Universitario Superior.</p>
+            <p>Modalidades de graduación para el nivel Técnico Superior.</p>
           </div>
           <div className="technical-graduation-grid">
             <article className="neu-card">

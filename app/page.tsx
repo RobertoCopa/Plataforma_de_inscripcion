@@ -268,7 +268,7 @@ export default function Home() {
             <Link
               href="/tecnico-superior"
               className="academic-path-card academic-path-technical neu-card"
-              aria-label="Explorar las carreras de Técnico Universitario Superior"
+              aria-label="Explorar las carreras de Técnico Superior"
             >
               <span className="icon-well yellow-well academic-path-icon" aria-hidden="true">
                 <Monitor size={25} />
@@ -276,7 +276,7 @@ export default function Home() {
               <div className="academic-path-content">
                 <span className="academic-path-label">
                   <span className="academic-path-number">►</span>
-                  TÉCNICO UNIVERSITARIO SUPERIOR
+                  TÉCNICO SUPERIOR
                 </span>
                 <h3>Tres carreras para aplicar tu talento</h3>
                 <p>6 semestres · Admisión directa</p>
