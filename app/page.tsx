@@ -252,7 +252,7 @@ export default function Home() {
               </span>
               <div className="academic-path-content">
                 <span className="academic-path-label">
-                  <span className="academic-path-number">01</span>
+                  <span className="academic-path-number">►</span>
                   LICENCIATURA
                 </span>
                 <h3>Ingeniería Informática</h3>
@@ -275,7 +275,7 @@ export default function Home() {
               </span>
               <div className="academic-path-content">
                 <span className="academic-path-label">
-                  <span className="academic-path-number">02</span>
+                  <span className="academic-path-number">►</span>
                   TÉCNICO UNIVERSITARIO SUPERIOR
                 </span>
                 <h3>Tres carreras para aplicar tu talento</h3>
