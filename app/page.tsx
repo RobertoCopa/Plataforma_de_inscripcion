@@ -239,32 +239,54 @@ export default function Home() {
           <div className="academic-paths-heading">
             <span className="eyebrow">TU RUTA DE FORMACIÓN</span>
             <h2 id="academic-paths-title">La tecnología tiene más de un camino.</h2>
+            <p>Elige el nivel que mejor encaja con tus metas y descubre tu próxima etapa.</p>
           </div>
           <div className="academic-paths-grid">
-            <a href="#carrera" className="academic-path-card neu-card">
-              <span className="icon-well">
+            <a
+              href="#carrera"
+              className="academic-path-card academic-path-degree neu-card"
+              aria-label="Explorar la Licenciatura en Ingeniería Informática"
+            >
+              <span className="icon-well academic-path-icon" aria-hidden="true">
                 <GraduationCap size={25} />
               </span>
-              <div>
-                <span>LICENCIATURA</span>
+              <div className="academic-path-content">
+                <span className="academic-path-label">
+                  <span className="academic-path-number">01</span>
+                  LICENCIATURA
+                </span>
                 <h3>Ingeniería Informática</h3>
                 <p>Explora la carrera, su formación y sus menciones.</p>
               </div>
-              <ArrowUpRight size={22} aria-hidden="true" />
+              <span className="academic-path-cta">
+                Explorar licenciatura
+                <span className="academic-path-arrow" aria-hidden="true">
+                  <ArrowUpRight size={18} />
+                </span>
+              </span>
             </a>
             <Link
               href="/tecnico-superior"
               className="academic-path-card academic-path-technical neu-card"
+              aria-label="Explorar las carreras de Técnico Universitario Superior"
             >
-              <span className="icon-well yellow-well">
+              <span className="icon-well yellow-well academic-path-icon" aria-hidden="true">
                 <Monitor size={25} />
               </span>
-              <div>
-                <span>TÉCNICO UNIVERSITARIO SUPERIOR</span>
+              <div className="academic-path-content">
+                <span className="academic-path-label">
+                  <span className="academic-path-number">02</span>
+                  TÉCNICO UNIVERSITARIO SUPERIOR
+                </span>
                 <h3>Tres carreras para aplicar tu talento</h3>
                 <p>6 semestres · Admisión directa</p>
               </div>
-              <ArrowUpRight size={22} aria-hidden="true" />
+              <span className="academic-path-cta">
+                Explorar carreras técnicas
+                <span className="academic-path-arrow" aria-hidden="true">
+                  <ArrowUpRight size={18} />
+                </span>
+              </span>
             </Link>
           </div>
         </section>
@@ -476,7 +498,7 @@ export default function Home() {
                 <h3>Empresas de tecnología</h3>
                 <p>Software, aplicaciones web y servicios informáticos.</p>
               </div>
-              <ArrowUpRight size={18} />
+              <span className="opportunity-chevron" aria-hidden="true">&lt;</span>
             </div>
             <div className="opportunity">
               <span className="icon-well">
@@ -486,7 +508,7 @@ export default function Home() {
                 <h3>Organizaciones y sector público</h3>
                 <p>Instituciones productivas, financieras y de servicios.</p>
               </div>
-              <ArrowUpRight size={18} />
+              <span className="opportunity-chevron" aria-hidden="true">&lt;</span>
             </div>
             <div className="opportunity">
               <span className="icon-well">
@@ -496,7 +518,7 @@ export default function Home() {
                 <h3>Educación e investigación</h3>
                 <p>Universidades, formación técnica e investigación científica.</p>
               </div>
-              <ArrowUpRight size={18} />
+              <span className="opportunity-chevron" aria-hidden="true">&lt;</span>
             </div>
             <div className="opportunity">
               <span className="icon-well yellow-well">
@@ -506,7 +528,7 @@ export default function Home() {
                 <h3>Consultoría independiente</h3>
                 <p>Asesoría, gestión y evaluación de soluciones tecnológicas.</p>
               </div>
-              <ArrowUpRight size={18} />
+              <span className="opportunity-chevron" aria-hidden="true">&lt;</span>
             </div>
           </div>
         </section>

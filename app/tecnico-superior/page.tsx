@@ -43,7 +43,7 @@ const programs = [
     ],
     outlook:
       "Aporta en equipos de desarrollo, áreas de sistemas y proyectos de digitalización de organizaciones públicas y privadas.",
-    purpose: "Construye soluciones.",
+    purpose: "Construye soluciones",
   },
   {
     id: "base-de-datos",
@@ -62,7 +62,7 @@ const programs = [
     ],
     outlook:
       "Apoya la gestión de información en empresas, instituciones y servicios que necesitan datos confiables para sus operaciones.",
-    purpose: "Da estructura a la información.",
+    purpose: "Da estructura a la información",
   },
   {
     id: "redes-ciberseguridad",
@@ -81,7 +81,7 @@ const programs = [
     ],
     outlook:
       "Colabora en soporte de infraestructura, operación de redes y protección de servicios informáticos en organizaciones de distintos sectores.",
-    purpose: "Conecta y protege.",
+    purpose: "Conecta y protege",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function TechnicalPage() {
                   className={`technical-program neu-card technical-${theme}`}
                 >
                   <div className="technical-program-art" aria-hidden="true">
-                    <span>{number} / TUS</span>
+                    <span>{number}:</span>
                     <div className="technical-art-icon">
                       <Icon size={66} strokeWidth={1.3} />
                     </div>
@@ -266,7 +266,6 @@ export default function TechnicalPage() {
           </div>
           <div className="technical-contact">
             <a href="/inscripcion" className="button button-blue">
-              <ClipboardCheck size={19} />
               Envia tu solicitud
             </a>
 
