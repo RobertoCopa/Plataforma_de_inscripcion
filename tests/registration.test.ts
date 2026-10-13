@@ -13,6 +13,7 @@ const sample = {
   ci: "1234567-1a",
   birthDate: "2005-02-15",
   gender: "Femenino",
+  career: "Ingeniería Informática",
   phone: "+591 7123 4567",
   email: " MARIA@EXAMPLE.COM ",
   consent: true,
@@ -76,6 +77,7 @@ test("guarda todos los campos, evita duplicados y hace idempotentes los reintent
     assert.equal(result.rows.length, 1);
     assert.equal(result.rows[0].first_name, "María José");
     assert.equal(result.rows[0].gender, "Femenino");
+    assert.equal(result.rows[0].career, "Ingeniería Informática");
     assert.equal(result.rows[0].status, "pendiente");
     assert.ok(result.rows[0].consent_at);
     await assert.rejects(

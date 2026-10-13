@@ -20,8 +20,8 @@ export default function PrivacyPage() {
         </p>
         <h2>Qué datos se solicitan</h2>
         <p>
-          Nombre(s), apellido(s), cédula de identidad, fecha de nacimiento, género, número de
-          celular y correo electrónico.
+          Nombre(s), apellido(s), cédula de identidad, fecha de nacimiento, género, carrera a la
+          que postulas, número de celular y correo electrónico.
         </p>
         <h2>Para qué se utilizan</h2>
         <p>

@@ -2,6 +2,7 @@ import type { Client } from "@libsql/client";
 import type { Registration } from "./validation";
 
 export class RegistrationConflict extends Error {}
+const privacyVersion = "2026-10-13";
 
 export async function allowRequest(client: Client, key: string, now = Date.now()) {
   const window = Math.floor(now / 3_600_000) * 3_600_000;
@@ -25,8 +26,8 @@ export async function storeRegistration(client: Client, data: Registration, id: 
   try {
     await client.execute({
       sql: `INSERT INTO registrations
-      (id, reference, first_name, last_name, ci, birth_date, gender, phone, email)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING`,
+      (id, reference, first_name, last_name, ci, birth_date, gender, career, phone, email, privacy_version)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING`,
       args: [
         id,
         reference,
@@ -35,8 +36,10 @@ export async function storeRegistration(client: Client, data: Registration, id: 
         data.ci,
         data.birthDate,
         data.gender,
+        data.career,
         data.phone,
         data.email,
+        privacyVersion,
       ],
     });
   } catch (error) {

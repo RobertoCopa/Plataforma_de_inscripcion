@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { careerOptions } from "./careers";
 
 const name = z
   .string()
@@ -7,6 +8,11 @@ const name = z
   .max(100, "Usa hasta 100 caracteres.")
   .regex(/^[\p{L}\p{M} .'’\-]+$/u, "Usa letras, espacios, guiones o apóstrofos.");
 export const genders = ["Femenino", "Masculino"] as const;
+type CareerValue = (typeof careerOptions)[number]["value"];
+const careerValues = careerOptions.map((career) => career.value) as [
+  CareerValue,
+  ...CareerValue[],
+];
 export function currentBoliviaDate() {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/La_Paz",
@@ -43,6 +49,7 @@ export const registrationSchema = z.object({
       );
     }, "La fecha debe ser real, posterior a 1899 y no futura."),
   gender: z.enum(genders, { error: "Selecciona una opción." }),
+  career: z.enum(careerValues, { error: "Selecciona una carrera." }),
   phone: z
     .string()
     .trim()
@@ -66,9 +73,17 @@ export type FormFields = {
   ci: string;
   birthDate: string;
   gender: string;
+  career: string;
   phone: string;
   email: string;
   consent: boolean;
 };
-export const personalFields = ["firstName", "lastName", "ci", "birthDate", "gender"] as const;
+export const personalFields = [
+  "firstName",
+  "lastName",
+  "ci",
+  "birthDate",
+  "gender",
+  "career",
+] as const;
 export const contactFields = ["phone", "email"] as const;

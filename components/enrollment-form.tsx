@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import whatsappQr from "@/image/QR.png";
 import { useRef, useState, type FormEvent } from "react";
+import { careerOptions } from "@/lib/careers";
 import {
   ArrowLeft,
   ArrowRight,
@@ -33,6 +34,7 @@ const empty: FormFields = {
   ci: "",
   birthDate: "",
   gender: "",
+  career: "",
   phone: "",
   email: "",
   consent: false,
@@ -43,6 +45,7 @@ const labels: Record<keyof FormFields, string> = {
   ci: "Cédula de identidad",
   birthDate: "Fecha de nacimiento",
   gender: "Género",
+  career: "Carrera a la que postulas",
   phone: "N.º de celular",
   email: "Correo electrónico",
   consent: "Consentimiento",
@@ -283,6 +286,40 @@ export function EnrollmentForm() {
         </div>
         {step === 0 && (
           <div className="form-grid">
+            <div className="field field-full">
+              <label htmlFor="career">
+                Carrera a la que postulas <span aria-hidden="true">*</span>
+              </label>
+              <select
+                id="career"
+                name="career"
+                value={data.career}
+                onChange={(e) => update("career", e.target.value)}
+                required
+                aria-invalid={!!errors.career}
+                aria-describedby={errors.career ? "career-error" : undefined}
+              >
+                <option value="" disabled>
+                  Selecciona la carrera de tu interés
+                </option>
+                {[...new Set(careerOptions.map((career) => career.level))].map((level) => (
+                  <optgroup key={level} label={level}>
+                    {careerOptions
+                      .filter((career) => career.level === level)
+                      .map((career) => (
+                        <option key={career.value} value={career.value}>
+                          {career.value.replace(/^Tec\. Sup\.\s*:\s*/, "")}
+                        </option>
+                      ))}
+                  </optgroup>
+                ))}
+              </select>
+              {errors.career && (
+                <span id="career-error" className="field-error">
+                  {errors.career}
+                </span>
+              )}
+            </div>
             {field("firstName", "text", "Tus nombres", {
               autoComplete: "given-name",
               maxLength: 100,

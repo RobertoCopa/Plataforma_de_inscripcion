@@ -29,13 +29,16 @@ RATE_LIMIT_SECRET=un-secreto-aleatorio-largo
 
 Puedes generar el secreto con `node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"`. Si no defines `RATE_LIMIT_SECRET`, el servidor utiliza el token de Turso para derivar claves anónimas.
 
-4. Prepara las tablas:
+4. Prepara las tablas y aplica la migración de carrera:
 
 ```powershell
 npm run db:setup
+npm run db:migrate:career
 ```
 
-El script lee `.env.local` y aplica `database/schema.sql` sin borrar solicitudes existentes. Solo necesitas ejecutarlo al preparar una base nueva. Las futuras modificaciones de esquema deberán hacerse mediante migraciones explícitas; `CREATE TABLE IF NOT EXISTS` no modifica tablas ya creadas.
+`db:setup` lee `.env.local` y aplica `database/schema.sql` sin borrar solicitudes existentes. La migración agrega la columna `career` a bases ya creadas y no elimina registros. Comprueba que `TURSO_DATABASE_URL` apunta a la base correcta antes de ejecutarla. Si la columna ya existe, el comando no hace nada. En una base nueva, `db:setup` crea la columna y la migración detecta que ya está presente.
+
+Las solicitudes anteriores quedan con `career` vacío porque esa información no existía. Las nuevas solicitudes requieren una carrera y la guardan junto con los demás datos. En Vercel no hace falta añadir variables de entorno nuevas; aplica la migración a la base que usa producción antes de desplegar esta versión. `CREATE TABLE IF NOT EXISTS` no modifica tablas ya creadas, por eso se usa una migración explícita.
 
 5. Reinicia el servidor local tras cambiar las variables. Envía una solicitud y verifica el registro en el panel de Turso.
 
@@ -50,7 +53,7 @@ El formulario registra **solicitudes de inscripción**, no confirma admisión ni
 
 ## Datos y protecciones
 
-Los registros incluyen los siete campos solicitados, código, fecha, consentimiento, versión del aviso y estado inicial `pendiente`. El CI se normaliza y es único. Se aceptan complementos, nombres con acentos, teléfonos internacionales y la opción de no declarar género.
+Los registros incluyen los datos personales y de contacto, la carrera elegida, código, fecha, consentimiento, versión del aviso y estado inicial `pendiente`. El CI se normaliza y es único. Se aceptan complementos, nombres con acentos y teléfonos internacionales.
 
 Las consultas usan parámetros. Los reintentos con el mismo identificador conservan una sola solicitud. El límite de 10 envíos por hora se guarda en la base, por lo que funciona entre instancias de Vercel. Las claves de conexión se derivan con HMAC; las antiguas se eliminan durante la actividad del formulario. Se verifica el origen del envío, se limita el tamaño del cuerpo y se incorpora un campo señuelo. No se registran datos personales ni credenciales en logs de la aplicación.
 

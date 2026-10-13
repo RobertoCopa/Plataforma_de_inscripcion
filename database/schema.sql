@@ -6,10 +6,16 @@ CREATE TABLE IF NOT EXISTS registrations (
   ci TEXT NOT NULL UNIQUE,
   birth_date TEXT NOT NULL,
   gender TEXT NOT NULL CHECK (gender IN ('Femenino', 'Masculino')),
+  career TEXT NOT NULL CHECK (career IN (
+    'Ingeniería Informática',
+    'Tec. Sup.: Desarrollo de Sistemas Informáticos',
+    'Tec. Sup.: Administrador de Base de Datos',
+    'Tec. Sup.: Redes y Ciberseguridad'
+  )),
   phone TEXT NOT NULL,
   email TEXT NOT NULL,
   consent_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),
-  privacy_version TEXT NOT NULL DEFAULT '2026-10-03',
+  privacy_version TEXT NOT NULL DEFAULT '2026-10-13',
   status TEXT NOT NULL DEFAULT 'pendiente' CHECK (status IN ('pendiente', 'contactado', 'completado', 'cancelado')),
   created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
 );
