@@ -26,7 +26,7 @@ import {
   type FormFields,
 } from "@/lib/validation";
 
-type Confirmation = { reference: string; createdAt: string };
+type Confirmation = { reference: string; createdAt: string; fullName: string };
 const whatsappGroupUrl = "enlace";
 const empty: FormFields = {
   firstName: "",
@@ -129,7 +129,10 @@ export function EnrollmentForm() {
         setError(result.error || "No pudimos enviar la solicitud. Inténtalo de nuevo.");
         return;
       }
-      setConfirmation(result);
+      setConfirmation({
+        ...result,
+        fullName: `${values.firstName} ${values.lastName}`.trim().replace(/\s+/g, " "),
+      });
       setData(empty);
       requestAnimationFrame(() => heading.current?.focus());
     } catch {
@@ -184,6 +187,45 @@ export function EnrollmentForm() {
     return (
       <div className="form-card neu-card">
         <div className="success-card" role="status">
+          <svg
+            className="receipt-ornament"
+            viewBox="0 0 770 990"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <g id="receipt-corner" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <path
+                d="M25 173V92C25 55 55 25 92 25H173"
+                stroke="#0b4f91"
+                strokeWidth="8"
+              />
+              <path
+                d="M42 158V99C42 67 67 42 99 42H158"
+                stroke="#e0b400"
+                strokeWidth="3.5"
+              />
+              <path d="M25 128H65L88 105H121" stroke="#2789bd" strokeWidth="4" />
+              <circle cx="25" cy="128" r="8" fill="#2789bd" />
+              <circle cx="121" cy="105" r="6" fill="#0b4f91" />
+              <path
+                d="M143 25L159 41L143 57L127 41Z"
+                fill="#f2d34d"
+                stroke="#d2a800"
+                strokeWidth="2.5"
+              />
+            </g>
+            <use href="#receipt-corner" transform="translate(770 0) scale(-1 1)" />
+            <use href="#receipt-corner" transform="translate(0 990) scale(1 -1)" />
+            <use href="#receipt-corner" transform="translate(770 990) scale(-1 -1)" />
+            <path d="M355 27L385 57L415 27Z" fill="#e4b800" />
+            <path d="M355 963L385 933L415 963Z" fill="#86bfdf" />
+          </svg>
+          <header className="receipt-header">
+            <span className="receipt-university">Universidad Autónoma Tomás Frías</span>
+            <span className="receipt-career">
+              Facultad de Ciencias Puras · Ingeniería Informática
+            </span>
+          </header>
           <span className="success-icon">
             <CheckCheck size={39} />
           </span>
@@ -196,6 +238,10 @@ export function EnrollmentForm() {
             <br />
             Únete al grupo de WhatsApp y mantente informado.
           </p>
+          <div className="receipt-person">
+            <span>Nombre completo de la persona postulante</span>
+            <strong>{confirmation.fullName}</strong>
+          </div>
           <div className="confirmation-code">
             <Image
               src={whatsappQr}
