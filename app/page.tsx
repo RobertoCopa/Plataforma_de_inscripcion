@@ -9,7 +9,6 @@ import {
   GraduationCap,
   Layers3,
   Network,
-  FlaskConical,
   Lightbulb,
   ShieldCheck,
   BrainCircuit,
@@ -26,6 +25,7 @@ import {
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FAQ } from "@/components/faq";
+import { MissionVisionCard } from "@/components/mission-vision-card";
 
 const areas = [
   {
@@ -315,26 +315,7 @@ export default function Home() {
                 Encuentra lo que te mueve <ArrowUpRight size={17} />
               </a>
             </div>
-            <div className="purpose-card neu-card">
-              <span className="icon-well">
-                <FlaskConical size={24} />
-              </span>
-              <h3>Una misión con propósito</h3>
-              <p>
-                Formar profesionales capaces de crear soluciones informáticas integrales, con
-                pensamiento crítico, innovación y ética para transformar su entorno.
-              </p>
-            </div>
-            <div className="purpose-card neu-card">
-              <span className="icon-well yellow-well">
-                <Lightbulb size={24} />
-              </span>
-              <h3>Una visión de futuro</h3>
-              <p>
-                Impulsar una formación de excelencia que evoluciona con la ciencia, promueve la
-                investigación y conecta a la universidad con las necesidades de la sociedad.
-              </p>
-            </div>
+            <MissionVisionCard />
           </div>
         </section>
 

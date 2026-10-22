@@ -640,11 +640,12 @@ svg {
 }
 .about-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-columns: 1.3fr 2fr;
   gap: 30px;
   margin-top: 36px;
 }
 .about-intro {
+  align-self: center;
   padding-right: 22px;
   padding-top: 7px;
 }
@@ -671,17 +672,63 @@ svg {
   border: 1px solid #e9eff780;
 }
 .purpose-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
   padding: 25px;
+  background: var(--surface);
 }
-.purpose-card:nth-child(2) {
+.purpose-card::before,
+.purpose-card::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+.purpose-card::before {
   background:
     radial-gradient(circle at 90% 12%, #5795c13b, transparent 60%),
     linear-gradient(145deg, #dce8f1, #cddbea);
 }
-.purpose-card:nth-child(3) {
+.purpose-card::after {
   background:
     radial-gradient(circle at 88% 12%, #e9bd4350, transparent 58%),
     linear-gradient(145deg, #e9e6db, #d9e0e9);
+}
+.purpose-card-mission::before,
+.purpose-card-vision::after {
+  opacity: 1;
+}
+.purpose-slide-stack {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 1;
+}
+.purpose-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(9px);
+  visibility: hidden;
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease,
+    visibility 0s linear 560ms;
+}
+.purpose-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition-delay: 0s;
+}
+.purpose-icon-well {
+  transition: color 560ms ease;
 }
 .purpose-card h3 {
   font-size: 14px;
@@ -692,6 +739,70 @@ svg {
   font-size: 11px;
   color: var(--muted);
   line-height: 1.9;
+}
+.purpose-controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #8e9fb533;
+}
+.purpose-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.purpose-tab,
+.purpose-autoplay {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #b8c6d533;
+  border-radius: 10px;
+  background: #dce5f044;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  transition:
+    color 400ms ease,
+    background-color 400ms ease,
+    box-shadow 400ms ease,
+    border-color 400ms ease,
+    transform 400ms ease;
+}
+.purpose-tab {
+  padding: 0 15px;
+}
+.purpose-autoplay {
+  padding: 0 13px;
+}
+.purpose-tab:hover,
+.purpose-autoplay:hover {
+  transform: translateY(-1px);
+  color: var(--blue-dark);
+}
+.purpose-tab[aria-pressed="true"] {
+  border-color: #b8c8da;
+  background: #dce8f1;
+  box-shadow: var(--inset);
+  color: var(--blue-dark);
+}
+.purpose-card-vision .purpose-tab[aria-pressed="true"] {
+  border-color: #d9c995;
+  background: #e9e6db;
+  box-shadow: inset 3px 3px 7px #d1ccbc, inset -3px -3px 7px #f3f0e7;
+  color: #80621c;
+}
+.purpose-autoplay {
+  border-color: transparent;
+  background: transparent;
 }
 .formation-section {
   background: transparent;
@@ -1660,7 +1771,7 @@ svg {
   }
   .about-grid {
     gap: 24px;
-    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-columns: 1.15fr 1.85fr;
   }
   .purpose-card {
     padding: 21px;
@@ -1781,7 +1892,7 @@ svg {
     font-size: 30px;
   }
   .about-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .about-intro {
     grid-column: 1/-1;
@@ -3428,6 +3539,10 @@ svg {
     line-height: 1.7;
   }
 }
+@page {
+  size: letter portrait;
+  margin: 0.5in;
+}
 @media print {
   .site-header,
   .site-footer,
@@ -3440,28 +3555,111 @@ svg {
     display: none !important;
   }
   body {
-    background: white;
-    color: black;
+    background: #fff !important;
+    color: #172943;
+    font-size: 10pt;
   }
   .container {
     width: 100%;
-    max-width: 800px;
+    max-width: none;
+    margin-inline: 0;
   }
   .enrollment-layout {
     display: block;
   }
-  .form-card,
-  .confirmation-code {
-    box-shadow: none;
-    border: 1px solid #ccc;
-  }
   .enrollment-main {
-    padding: 20px;
+    padding: 0;
+  }
+  .form-card {
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    box-shadow: none;
+  }
+  .success-card {
+    padding: 0;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
   .success-card:before {
     content: "Ingeniería Informática · Universidad Autónoma Tomás Frías";
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 0.22in;
+    padding-bottom: 0.1in;
+    border-bottom: 1px solid #c5ccd5;
     font-weight: 700;
+    font-size: 12pt;
+  }
+  .success-icon {
+    width: 0.55in;
+    height: 0.55in;
+    margin: 0 auto 0.12in;
+    border: 1px solid #c5ccd5;
+    background: #fff;
+    box-shadow: none;
+  }
+  .success-icon svg {
+    width: 0.28in;
+    height: 0.28in;
+  }
+  .success-card > .eyebrow {
+    margin-bottom: 0.06in;
+    font-size: 8pt;
+  }
+  .success-card h2 {
+    font-size: 20pt;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+  .success-card > p {
+    margin-top: 0.08in;
+    color: #38465a;
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+  .confirmation-code {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.18in auto;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .confirmation-qr-image {
+    width: 2in;
+    height: 2in;
+    margin: 0 auto 0.08in;
+    object-fit: contain;
+  }
+  .confirmation-whatsapp {
+    display: none !important;
+  }
+  .confirmation-code small {
+    color: #38465a;
+    font-size: 8pt;
+  }
+  .form-notice {
+    max-width: 6.5in;
+    margin: 0.14in auto 0;
+    padding: 0.12in 0.16in;
+    border: 1px solid #d6dde5;
+    background: #f5f7fa;
+    box-shadow: none;
+    color: #202b39;
+    font-size: 8pt;
+    line-height: 1.4;
+    text-align: left;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .form-notice svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
   }
 }
