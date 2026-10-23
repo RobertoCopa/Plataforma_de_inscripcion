@@ -3567,6 +3567,11 @@ svg {
     line-height: 1.7;
   }
 }
+@media (max-width: 480px) and (hover: none) and (pointer: coarse) {
+  .hero h1 {
+    font-size: clamp(44px, 14vw, 55px);
+  }
+}
 @page {
   size: letter portrait;
   margin: 0.4in;
