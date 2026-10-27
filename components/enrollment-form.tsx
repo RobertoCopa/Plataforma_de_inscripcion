@@ -27,7 +27,8 @@ import {
 } from "@/lib/validation";
 
 type Confirmation = { reference: string; createdAt: string; fullName: string };
-const whatsappGroupUrl = "enlace";
+const whatsappGroupUrl =
+  "https://chat.whatsapp.com/Dcq1k36lLoY3u7UpcUHvma?s=qs&p=i&mlu=4&ilr=4&iam=2";
 const empty: FormFields = {
   firstName: "",
   lastName: "",
